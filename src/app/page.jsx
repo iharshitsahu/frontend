@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div>
       <Link href="/login">login</Link><br />
-      <Link href="/signup">signip</Link><br />
+      <Link href="/signup">signup</Link><br />
       <Link href="/contact">contact</Link><br />
       <Link href="/about">about</Link><br />
 

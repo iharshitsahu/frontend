@@ -5,6 +5,7 @@ const Login = () => {
     <div>
         <h2>Login Page</h2>
         <button className='my-btn'>submit login</button>
+        <button className='btn btn-primary'>nice</button>
     </div>
   )
 }
