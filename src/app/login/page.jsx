@@ -53,7 +53,7 @@ const Login = () => {
                                         <h4 className='text-center fw-bold text-primary my-4'>Login To Continue</h4>
                                         <form onSubmit={loginForm.handleSubmit}>
                                             {/* 2 column grid layout with text inputs for the first and last names */}
-                                            <div class="mb-3">
+                                            <div className="mb-3">
                                                 <label for="" className="form-label">Email Address</label>
                                                 <input
                                                     type="text"
@@ -65,23 +65,23 @@ const Login = () => {
                                                     />
                                                     {
                                                       loginForm.touched.email &&
-                                                      <small class="text-danger">{loginForm.errors.email}</small> 
+                                                      <small className="text-danger">{loginForm.errors.email}</small> 
                                                     }
                                                 
                                             </div>
-                                            <div class="mb-3">
-                                                <label for="" class="form-label">Password</label>
+                                            <div className="mb-3">
+                                                <label for="" className="form-label">Password</label>
                                                 <input
                                                     type="password"
                                                     id="password"
                                                     onChange={loginForm.handleChange}
                                                     value={loginForm.values.password}
-                                                    class="form-control"
+                                                    className="form-control"
                                                     placeholder=""
                                                 />
                                                 {
                                                       loginForm.touched.password &&
-                                                      <small class="text-danger">{loginForm.errors.password}</small> 
+                                                      <small className="text-danger">{loginForm.errors.password}</small> 
                                                     }
                                                 
                                             </div>
