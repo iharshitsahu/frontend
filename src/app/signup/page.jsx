@@ -8,7 +8,12 @@ const Signup = () => {
   const signupValidationSchema=Yup.object().shape({
     email:Yup.string().required('Email is Required').email('Invalid email'),
     name:Yup.string().min(2,'Too Short!').max(50, 'Too Long!').required('Required'),
-    password:Yup.string().required('Password is Required'),
+    password:Yup.string().required('Password is Required')
+    .matches(/[a-z]/,'password must contain lower case')
+    .matches(/[A-Z]/,'password must contain Upper case')
+    .matches(/[0-9]/,'password must contain number')
+    .matches(/\W/,'password must contain special case')
+    .min(6,'Too Short!'),
     cpassword: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match')
   });
 
@@ -21,8 +26,12 @@ const Signup = () => {
       
     },
     onSubmit:(values,{resetForm})=>{
-      console.log(values);
-      resetForm();
+      setTimeout(() => {
+        console.log(values);
+        resetForm();
+      }, 3000);
+
+      
     },
     validationSchema: signupValidationSchema
   })
@@ -35,11 +44,13 @@ const Signup = () => {
               <div className="row g-0">
                 <div className="col-xl-6 d-none d-xl-block">
                   <div style={{
-                    backgroundImage: `url('https://assets.materialup.com/uploads/7563d4bc-0ed9-4202-a86c-ac8dc46e73ef/preview.jpg')`,
-                    height: '100%',
+                    backgroundImage: `url('https://cdn-icons-png.flaticon.com/512/1900/1900246.png')`,
+                    height: '75%',
                     backgroundPosition: 'center',
                     backgroundSize: 'contain',
-                    backgroundRepeat: 'no-repeat'
+                    backgroundRepeat: 'no-repeat',
+                    alignItems:'center',
+                    margin:'15%'
                   }}>
 
                   </div>
@@ -139,7 +150,7 @@ const Signup = () => {
                         <button type="button" className="btn btn-light">
                           Reset all
                         </button>
-                        <button type="submit" className="btn btn-primary ms-2">
+                        <button disabled={signupForm.isSubmitting} type="submit" className="btn btn-primary ms-2">
                           Submit form
                         </button>
                       </div>

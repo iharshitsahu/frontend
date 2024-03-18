@@ -40,12 +40,12 @@ const Login = () => {
                                     Welcome
                                     <span className="text-primary"> Back</span>
                                 </h1>
-                                <p style={{ color: "hsl(217, 10%, 50.8%)" }}>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
-                                    itaque accusantium odio, soluta, corrupti aliquam quibusdam
-                                    tempora at cupiditate quis eum maiores libero veritatis? Dicta
-                                    facilis sint aliquid ipsum atque?
-                                </p>
+                                <h1 className="my-5 display-3 fw-bold ls-tight">
+                                    VOX -
+                                    <span className="text-primary"> Market</span>
+                                </h1>
+                                
+                                
                             </div>
                             <div className="col-lg-5 col-md-6 mb-5 mb-lg-0 mx-auto">
                                 <div className="card shadow">
