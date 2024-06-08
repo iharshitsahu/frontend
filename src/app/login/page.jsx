@@ -11,7 +11,7 @@ const Login = () => {
     password:Yup.string().required('Password is required')
   });
 
-  //initialize formik
+  
   const loginForm=useFormik({
     initialValues:{
       email:'',
@@ -20,7 +20,7 @@ const Login = () => {
     onSubmit:(values,{resetForm})=>{
       console.log(values);
       resetForm();
-      //send data to backend
+      
     },
     validationSchema: loginValidationSchema
 
@@ -28,22 +28,19 @@ const Login = () => {
 
     
     return (
-        <div className='vh-100 bg-primary-subtle d-flex align-items-center'>
+        <div className='vh-100 bg-primary-subtle d-flex align-items-center' style={{ backgroundImage: "url(https://wallpaperaccess.com/full/2593068.jpg)", backgroundSize: "cover" }}>
             <section className="container">
                 <div
                     className="px-4 py-5 px-md-5 text-center text-lg-start"
                 >
                     <div className="container">
-                        <div className="row gx-lg-5 align-items-center">
+                        <div className="row gx-lg-5">
                             <div className="col-lg-6 mb-5 mb-lg-0">
                                 <h1 className="my-5 display-3 fw-bold ls-tight">
                                     Welcome
-                                    <span className="text-primary"> Back</span>
+                                    <span className='text-primary' > Back</span>
                                 </h1>
-                                <h1 className="my-5 display-3 fw-bold ls-tight">
-                                    VOX -
-                                    <span className="text-primary"> Market</span>
-                                </h1>
+                                
                                 
                                 
                             </div>
@@ -51,6 +48,7 @@ const Login = () => {
                                 <div className="card shadow">
                                     <div className="card-body py-5 px-md-5">
                                         <h4 className='text-center fw-bold text-primary my-4'>Login To Continue</h4>
+                                        <h4 className='text-center fw-bold text-dark my-4'>VOX-MARKET</h4>
                                         <form onSubmit={loginForm.handleSubmit}>
                                             {/* 2 column grid layout with text inputs for the first and last names */}
                                             <div className="mb-3">
@@ -62,7 +60,7 @@ const Login = () => {
                                                     value={loginForm.values.email}
                                                     className="form-control"
                                                     placeholder=""
-                                                    />
+                                                />
                                                     {
                                                       loginForm.touched.email &&
                                                       <small className="text-danger">{loginForm.errors.email}</small> 
@@ -101,7 +99,7 @@ const Login = () => {
                                                     Remember Me
                                                 </label>
                                             </div>
-                                            {/* Submit button */}
+                                            
                                             <button
                                                 type="submit"
                                                 className="btn btn-primary w-100 mb-4"
@@ -119,9 +117,9 @@ const Login = () => {
                         </div>
                     </div>
                 </div>
-                {/* Jumbotron */}
+                
             </section>
-            {/* Section: Design Block */}
+            
         </div>
 
     )
