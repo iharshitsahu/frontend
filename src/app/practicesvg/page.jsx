@@ -1,9 +1,28 @@
-import React from 'react';
+'use client';
+import React, { useEffect } from 'react';
+import * as d3 from 'd3';
 
-function PracticeSVG() {
+const PracticeSVG=()=> {
+     
+    
+    useEffect(() => { 
+        const selectedElement = d3.select('.my-class');
+        console.log({selectedElement});
+        selectedElement.style('color', 'red');
+        const selectedElementP = d3.select('p');
+        console.log({selectedElementP});
+        selectedElementP.style('color', 'blue');
+    }, [])
+        
     return (
+
         <div>
             <h1>hello Harshit!!</h1>
+            <p>First</p>
+            <p>Second</p>
+            <div className='my-class'>Hello 1</div>
+            <div className='my-class'>Hello 2</div>
+            <div className='my-class'>Hello 3</div>
             <svg width={100} height={100} style={{border: "1px solid red"}}>
                 <path
                     d= "M25,25 L25,35
